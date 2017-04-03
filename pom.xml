@@ -52,7 +52,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
 					<layout>JAR</layout>
-					<mainClass>com.genband.util.dummy.DummyApplication</mainClass>
+					<mainClass>com.genband.util.dummy.gateway.DummyApplication</mainClass>
 				</configuration>
 				<executions>
 					<execution>
