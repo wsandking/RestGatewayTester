@@ -8,7 +8,7 @@ import com.genband.util.broker.BrokerMessagingService;
 import com.genband.util.broker.BrokerType;
 import com.genband.util.broker.MessagingService;
 import com.genband.util.broker.model.Message;
-import com.genband.util.broker.util.MessageUtils;
+import com.genband.util.broker.util.MessageFactory; 
 import com.genband.util.log.slf4j.GbLogger;
 import com.genband.util.log.slf4j.GbLoggerFactory;
 
@@ -16,14 +16,15 @@ import com.genband.util.log.slf4j.GbLoggerFactory;
 public class DummyRabbitmqService {
     private static GbLogger log = GbLoggerFactory.getGbLogger(DummyRabbitmqService.class.getName());
     private MessagingService svc;
-    private MessageUtils util;
+    private MessageFactory util;
 
     @PostConstruct
     private void construct() {
         log.info("Dummy Service Loaded...");
         svc = BrokerMessagingService.getService(BrokerType.RABBITMQ);
+        svc.enableDebug();
         svc.startConsumeMessaging();
-        util = MessageUtils.getInstance();
+        util = MessageFactory.getInstance();
 
     }
 
