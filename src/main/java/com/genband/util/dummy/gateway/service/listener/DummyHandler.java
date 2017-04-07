@@ -11,7 +11,7 @@ import com.genband.util.dummy.gateway.service.DummyRabbitmqService;
 import com.genband.util.log.slf4j.GbLogger;
 import com.genband.util.log.slf4j.GbLoggerFactory;
 
-@RabbitmqMessageController(state = "work")
+@RabbitmqMessageController
 public class DummyHandler {
     private static GbLogger log = GbLoggerFactory.getGbLogger(DummyHandler.class.getName());
 
