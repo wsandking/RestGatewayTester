@@ -41,8 +41,8 @@ public class DummyRabbitmqService {
         log.info("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
         log.info("Unrouted Message: \n " + message.getServiceData());
         log.info("Type: \n " + message.getMessageParams().getType());
-        log.info("Transcation-ID: \n " + message.getMessageParams().getTransactionId());
-        log.info("Message-ID: \n " + message.getMessageParams().getMessageId());
+        log.info("Transcation-ID: \n " + message.getMessageParams().getTransactionID());
+        log.info("Message-ID: \n " + message.getMessageParams().getMessageID());
         log.info("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
         // svc.bindRoutingKey(message.getMessageParams().getSubscriber());
     }
@@ -52,8 +52,8 @@ public class DummyRabbitmqService {
         log.info("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
         log.info("Message: \n " + message.getServiceData());
         log.info("Type: \n " + message.getMessageParams().getType());
-        log.info("Transcation-ID: \n " + message.getMessageParams().getTransactionId());
-        log.info("Message-ID: \n " + message.getMessageParams().getMessageId());
+        log.info("Transcation-ID: \n " + message.getMessageParams().getTransactionID());
+        log.info("Message-ID: \n " + message.getMessageParams().getMessageID());
         log.info("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
     }
 
