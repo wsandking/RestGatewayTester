@@ -44,7 +44,7 @@ public class DummyRabbitmqService {
         log.info("Transcation-ID: \n " + message.getMessageParams().getTransactionID());
         log.info("Message-ID: \n " + message.getMessageParams().getMessageID());
         log.info("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
-        // svc.bindRoutingKey(message.getMessageParams().getSubscriber());
+        svc.bindRoutingKey(message.getMessageParams().getSubscriber());
     }
 
     public void handleRoutedMessage(Message message) {
