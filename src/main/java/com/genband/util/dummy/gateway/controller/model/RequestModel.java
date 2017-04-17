@@ -21,4 +21,9 @@ public class RequestModel {
         this.message = message;
     }
 
+    @Override
+    public String toString() {
+        return "RequestModel [serviceName=" + serviceName + ", message=" + message + "]";
+    }
+
 }

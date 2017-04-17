@@ -28,7 +28,7 @@ public class RestGatewayController {
 
         log.info(String.format("Message: %s to svc %s ----- for user: %s ", model.getMessage(), model.getServiceName(),
                 username));
-        ResponseEntity<Message> response;
+        ResponseEntity<Message> response = null;
         try {
             Message returnMessage = rabbitSvc.synchronziedSendMsg(model.getMessage(), username, model.getServiceName());
             response = new ResponseEntity<Message>(returnMessage, HttpStatus.CREATED);
