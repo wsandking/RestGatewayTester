@@ -3,11 +3,11 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>util-dummy</groupId>
 	<artifactId>dummy-restgateway</artifactId>
-	<version>0.0.6-SNAPSHOT</version>
+	<version>0.0.7-SNAPSHOT</version>
 
 	<properties>
 		<docker.image.prefix>util-dummy</docker.image.prefix>
-		<docker.repository.url>172.28.249.153:5000</docker.repository.url>
+		<docker.repository.url>172.28.251.170:5001</docker.repository.url>
 	</properties>
 
 	<parent>
