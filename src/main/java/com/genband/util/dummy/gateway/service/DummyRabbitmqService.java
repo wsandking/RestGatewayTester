@@ -20,12 +20,19 @@ public class DummyRabbitmqService {
 
     @Autowired
     private MessagingService svc;
+
+    @Autowired
     private MessageFactory util;
+
+    @Bean
+    public MessageFactory getMessageFactory() {
+        MessageFactory util = MessageFactory.getInstance();
+        return util;
+    }
 
     @PostConstruct
     private void construct() {
         log.info("Dummy Service Loaded...");
-        util = MessageFactory.getInstance();
     }
 
     @Bean

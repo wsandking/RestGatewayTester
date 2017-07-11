@@ -13,7 +13,7 @@
 	<parent>
 		<groupId>com.genband.util</groupId>
 		<artifactId>base</artifactId>
-		<version>0.0.5</version>
+		<version>0.0.32</version>
 	</parent>
 
 	<dependencyManagement>
@@ -29,6 +29,10 @@
 	</dependencyManagement>
 
 	<dependencies>
+		<dependency>
+			<groupId>com.genband.util</groupId>
+			<artifactId>broker-util</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>com.genband.util.ctl</groupId>
 			<artifactId>control-interface</artifactId>
@@ -46,16 +50,26 @@
 				</configuration>
 			</plugin>
 			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
 				<configuration>
-					<layout>JAR</layout>
-					<mainClass>com.genband.util.dummy.gateway.DummyApplication</mainClass>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+					<finalName>debug-instance</finalName>
+					<appendAssemblyId>false</appendAssemblyId>
+					<archive>
+						<manifest>
+							<mainClass>com.genband.debug.PrintHelloWorldForever</mainClass>
+						</manifest>
+					</archive>
 				</configuration>
 				<executions>
 					<execution>
+						<id>make-assembly</id> <!-- this is used for inheritance merges -->
+						<phase>package</phase> <!-- bind to the packaging phase -->
 						<goals>
-							<goal>repackage</goal>
+							<goal>single</goal>
 						</goals>
 					</execution>
 				</executions>

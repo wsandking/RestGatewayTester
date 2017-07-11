@@ -15,7 +15,7 @@ import com.genband.util.log.slf4j.GbLogger;
 import com.genband.util.log.slf4j.GbLoggerFactory;
 
 @RestController
-@RequestMapping("/rest/version/1/user/")
+@RequestMapping("/rest/version/1/user")
 public class RestGatewayController {
 
     private static GbLogger log = GbLoggerFactory.getGbLogger(RestGatewayController.class.getName());
@@ -23,7 +23,7 @@ public class RestGatewayController {
     @Autowired
     private DummyRabbitmqService rabbitSvc;
 
-    @RequestMapping(value = "{username}", method = RequestMethod.POST)
+    @RequestMapping(value = "/{username}/send", method = RequestMethod.POST)
     public ResponseEntity<Message> Login(@PathVariable("username") String username, @RequestBody RequestModel model) {
 
         log.info(String.format("Message: %s to svc %s ----- for user: %s ", model.getMessage(), model.getServiceName(),
@@ -35,6 +35,18 @@ public class RestGatewayController {
         } catch (Exception e) {
             Message responseBody = null;
             response = new ResponseEntity<Message>(responseBody, HttpStatus.UNAUTHORIZED);
+            e.printStackTrace();
+        }
+        return response;
+    }
+
+    @RequestMapping(value = "/operation/receive", method = RequestMethod.GET)
+    public ResponseEntity<String> getMessage() {
+        log.info(String.format("Message request received..."));
+        ResponseEntity<String> response = null;
+        try {
+            response = new ResponseEntity<String>(new String("Possible answered..."), HttpStatus.CREATED);
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return response;
