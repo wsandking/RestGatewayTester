@@ -56,11 +56,10 @@
 					<descriptorRefs>
 						<descriptorRef>jar-with-dependencies</descriptorRef>
 					</descriptorRefs>
-					<finalName>debug-instance</finalName>
 					<appendAssemblyId>false</appendAssemblyId>
 					<archive>
 						<manifest>
-							<mainClass>com.genband.debug.PrintHelloWorldForever</mainClass>
+							<mainClass>com.genband.util.dummy.gateway.DummyApplication</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
